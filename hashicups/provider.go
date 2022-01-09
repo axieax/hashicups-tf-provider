@@ -13,12 +13,12 @@ func Provider() *schema.Provider {
 	return &schema.Provider{
 		// Define the Schema for the Provider (fields to be passed in from terraform)
 		Schema: map[string]*schema.Schema{
-			"username": &schema.Schema{
+			"username": {
 				Type:        schema.TypeString,
 				Optional:    true,
 				DefaultFunc: schema.EnvDefaultFunc("HASHICUPS_USERNAME", nil),
 			},
-			"password": &schema.Schema{
+			"password": {
 				Type:        schema.TypeString,
 				Optional:    true,
 				Sensitive:   true,
