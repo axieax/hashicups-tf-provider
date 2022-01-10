@@ -57,12 +57,9 @@ func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}
 
 	// NOTE: cannot declare untyped nil in golang, e.g. up := nil
 	up := &username
-	if username == "" {
-		up = nil
-	}
-
 	pp := &password
-	if password == "" {
+	if username == "" || password == "" {
+		up = nil
 		pp = nil
 	}
 
